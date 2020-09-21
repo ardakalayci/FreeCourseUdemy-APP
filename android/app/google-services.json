@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "861482130092",
+    "firebase_url": "https://course-discount-free.firebaseio.com",
+    "project_id": "course-discount-free",
+    "storage_bucket": "course-discount-free.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861482130092:android:a058678346366720ee5d09",
+        "android_client_info": {
+          "package_name": "akalayci.com.freecoursediscount"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861482130092-lcb64d5m0lvtm3o7ghve083nngt5od4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD92tMKv-IdgyYtn0pjahJMyrz_e70Oeb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861482130092-lcb64d5m0lvtm3o7ghve083nngt5od4p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
