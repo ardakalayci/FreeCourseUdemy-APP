@@ -16,11 +16,13 @@ class _CourseDetailState extends State<CourseDetail> {
   Widget build(BuildContext context) {
     DocumentSnapshot data=widget.data;
 
+    var devwidth = MediaQuery.of(context).size.width;
+    var devheight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(),
       body:ListView(
         children: [
-          Image.network(data.data()["image"]),
+          Image.network(data.data()["image"],fit: BoxFit.fill,),
           Text(data
           .data()["link"]),
           Text(data.data()["description"]),
