@@ -30,7 +30,9 @@ class _HomePageState extends State<HomePage> {
     devwidth = MediaQuery.of(context).size.width;
     devheight = MediaQuery.of(context).size.height;
     return Scaffold(
+
       appBar: AppBar(
+        backgroundColor: Colors.black,
         centerTitle: true,
         title: Text("Ücretsiz İndirimli Udemy Kursları"),
       ),
@@ -44,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             }
 
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Text("Loading");
+              return Center(child: CircularProgressIndicator(),);
             }
 
             return SingleChildScrollView(
@@ -70,9 +72,9 @@ class _HomePageState extends State<HomePage> {
                           enlargeCenterPage: false,
                           scrollDirection: Axis.horizontal,
                         )),
-                  ),
+                  ),Divider(),
+                  Text("Popüler Kurslar",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),),
                   Container(
-                    height: devheight / 2,
                     child: new ListView(
                       shrinkWrap: true,
                       children:
@@ -86,21 +88,32 @@ class _HomePageState extends State<HomePage> {
                                 return CourseDetail(document);
                               }));
                             },
-                            leading: Image.network(document.data()['image']),
+                            leading: Stack(
+                                children: [
+
+                                  Image.network(document.data()['image']),
+                                  Positioned(
+                                    top: 2,
+                                    right: 2,
+                                    child: ClipOval(
+                                        child: document.data()["discount"]!=null ?Container(
+                                          padding: EdgeInsets.all(5),
+                                          color:Colors.red,child: Row(
+                                          children: [
+                                            Icon(Icons.trending_down,color: Colors.white,size: 10,),
+                                            Text(document.data()["discount"]??"",style: TextStyle(fontSize: 10,color: Colors.white,fontWeight: FontWeight.bold),),
+                                          ],
+                                        ),):Container()),
+                                  ),
+
+                                ]),
                             title: new Text(document.data()['name']),
                             subtitle: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children:[
                                   Text(document.data()['instructor']),
-                                  ClipOval(
-                                    child: document.data()["discount"]!=null ?Container(
-                                      padding: EdgeInsets.all(5),
-                                      color:Colors.red,child: Row(
-                                      children: [
-                                        Icon(Icons.trending_down,color: Colors.white,),
-                                        Text(document.data()["discount"]??"",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-                                      ],
-                                    ),):Container()),
+                                  Text(document.data()["price"],style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),)
+
 
 
                                 ]),

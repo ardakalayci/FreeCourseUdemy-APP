@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  url_launcher: ^5.7.2
   carousel_slider: ^2.2.1
   firebase_core: "0.5.0"
   getwidget: ^1.1.3

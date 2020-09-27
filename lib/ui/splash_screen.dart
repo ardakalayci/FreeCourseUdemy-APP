@@ -43,7 +43,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
 
 
 
-    Future.delayed(const Duration(seconds: 3), () async {
+    Future.delayed(const Duration(seconds: 1), () async {
     Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) {
             return HomePage();
